@@ -14,15 +14,17 @@ var sportscar = {
     numAvail: 2
     };
 
-var request = prompt("Would you like to rent a sedan, suv or sportscar?");
+var request = prompt("Which model would you like to rent: sedan, suv or sportscar?");
 	
-	request.toLowerCase() == "sedan"
-	    ? (sedan.numAvail < 1 ? prompt("Sorry, we have " + sedan.numAvail + " sedans available. Please choose a different model."))
-	    : (sedan.numAvail >= 1
-    	? var numAvailResponse = prompt('There are ' + sedan.numAvail + ' available. Would you like to reserve one for ' + sedan.price + '? Please respond yes or no.'))
-        	    ? (numAvailResponse.toLowerCase() == "yes")
-        	        : alert("Thank you, your " + sedan.name + " has been reserved." );
-        	        : alert("Sorry we couldn't be of more assistance." );
+	(request.toLowerCase() == "sedan") 
+	    if (sedan.numAvail < 1) {
+            prompt("Sorry, we have " + sedan.numAvail + " sedans available. Please choose a different model.");
+	    } else if (sedan.numAvail >= 1) {
+    	    var numAvailResponse = prompt('There are ' + sedan.numAvail + ' available. Would you like to reserve one for ' + sedan.price + '? Please respond yes or no.');
+        	    if (numAvailResponse.toLowerCase() == "yes") {
+        	        alert("Thank you, your " + sedan.name + " has been reserved." );
+        	    } else {
+                    alert("Sorry we couldn't be of more assistance." );
         	    }
     	    
 	} else if (request.toLowerCase() == "suv") {
