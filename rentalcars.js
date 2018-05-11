@@ -16,7 +16,7 @@ var sportscar = {
 
 var request = prompt("Which model would you like to rent: sedan, suv or sportscar?");
 	
-	(request.toLowerCase() == "sedan") 
+	if (request.toLowerCase() == "sedan") {
 	    if (sedan.numAvail < 1) {
             prompt("Sorry, we have " + sedan.numAvail + " sedans available. Please choose a different model.");
 	    } else if (sedan.numAvail >= 1) {
@@ -24,8 +24,9 @@ var request = prompt("Which model would you like to rent: sedan, suv or sportsca
         	    if (numAvailResponse.toLowerCase() == "yes") {
         	        alert("Thank you, your " + sedan.name + " has been reserved." );
         	    } else {
-                    alert("Sorry we couldn't be of more assistance." );
+                    alert("Sorry we couldn't be of more assistance.");
         	    }
+	    }
     	    
 	} else if (request.toLowerCase() == "suv") {
         if (suv.numAvail < 1) {
@@ -35,11 +36,11 @@ var request = prompt("Which model would you like to rent: sedan, suv or sportsca
                 if (numAvailResponse.toLowerCase() == "yes") {
     	        alert("Thank you, your " + suv.name + " has been reserved." );
     	    } else {
-    	        alert("Sorry we couldn't be of more assistance." );
+    	        alert("Sorry we couldn't be of more assistance.");
     	    }
 	    }
 	
-	} else if (request.toLowerCase() == "sportscar" || "sport") {
+	} else if (request.toLowerCase() == "sportscar") {
 	    if (sportscar.numAvail < 1) {
             prompt("Sorry, we have " + sportscar.numAvail + " sportscars available. Please choose a different model.");
 	    } else if (suv.numAvail >= 1) {
@@ -47,8 +48,7 @@ var request = prompt("Which model would you like to rent: sedan, suv or sportsca
                 if (numAvailResponse.toLowerCase() == "yes") {
         	        alert("Thank you, your " + sportscar.name + " has been reserved." );
         	    } else {
-        	        alert("Sorry we couldn't be of more assistance." );
+        	        alert("Sorry we couldn't be of more assistance.");
         	    }
 	    }
 	}
-}
